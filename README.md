@@ -62,7 +62,7 @@ sanity init
 sanity start
 ```
 
-5.Create schema in sanity   
+5.Create schema in sanity
 
 ```
 export default {
@@ -77,4 +77,67 @@ export default {
         }
     ]
 }
+```
+
+## TypeError next/babel
+
+if you get error in index.js that it can not find the babel
+
+Create a .babelrc file in root folder and
+write
+
+```
+{
+   "presets": ["next/babel"],
+   "plugins": []
+}
+```
+
+then in your root folder write in .eslintrc.json file
+
+```
+{
+  "extends": ["next/babel", "next/core-web-vitals"]
+}
+
+```
+
+## [Set up TAILWINDCSS click to see documentation](https://v2.tailwindcss.com/docs/guides/nextjs)
+
+1. install via npm
+
+```
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
+```
+
+2. configure path
+
+```
+// tailwind.config.js
+  module.exports = {
+
+   content: [
+    './pages/**/*.{js,ts,jsx,tsx}',         './components/**/*.{js,ts,jsx,tsx}'
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  }
+```
+
+3.include tailwind in your css in the globals.css file
+
+```
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+4.import into your app.js
+
+```
+import '../styles/globals.css'
 ```
