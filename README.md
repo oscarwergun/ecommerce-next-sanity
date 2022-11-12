@@ -32,3 +32,49 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# SYNTAX NOTES
+
+1.Install next app
+
+```
+npx create-react-app
+```
+
+2.if you want to install exact version of the dependency of some libraries you can use
+
+```
+npm install --legacy-peer-deps
+```
+
+3. Set up sanity backend
+
+```
+sudo npm install -g @sanity/cli
+sanity init
+```
+
+### Keep in my mind you need to change nodemodules in git ignore
+
+4. set up sanity studio
+
+```
+sanity start
+```
+
+5.Create schema in sanity   
+
+```
+export default {
+    name: '',
+    title: '',
+    type: '',
+    fields: [
+        {
+            name: ''
+            title: '',
+            type:''
+        }
+    ]
+}
+```
