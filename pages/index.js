@@ -17,9 +17,16 @@ const Home = ({ products, bannerData }) => {
         <h2 className="text-4xl text-center capitalize tracking-wider text-gray-600 font-semibold">
           Top selling products
         </h2>
-        <p className="text-2xl font-semibold text-slate-400 text-center"> Recommended products</p>
+        <p className="text-2xl font-semibold text-slate-400 text-center">
+          {" "}
+          Recommended products
+        </p>
       </div>
-      {products?.map((product) => product.name)}
+      <div className="flex flex-wrap gap-5 justify-center my-5 w-full">
+        {products?.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };
