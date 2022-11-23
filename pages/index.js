@@ -10,7 +10,6 @@ import {
 const Home = ({ products, bannerData }) => {
   return (
     <div className="">
-      {/* <Navbar /> */}
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       {/* {console.log(bannerData)} */}
       <div>
@@ -27,6 +26,8 @@ const Home = ({ products, bannerData }) => {
           <Product key={product._id} product={product} />
         ))}
       </div>
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+    
     </div>
   );
 };

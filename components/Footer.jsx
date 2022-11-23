@@ -1,9 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import Link from "next/link";
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <div>
+      <span></span>
+      <Link
+        href="http://portfolio-2-0-904o647jn-oscaroguzhan.vercel.app
+"
+      >
+        <div>CodeguruOzzy Copyright@2022</div>
+      </Link>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
