@@ -164,4 +164,14 @@ export const urlFor = (source) => builder.image(source);
 ```
 2. import in client into index.js and
 call the getServerSideProps function (that is the case for next.js apps)
- 
+
+## It is important when you are making pull request
+  go to main branch and check if there was any changes during you are working with your branch 
+  ```
+  git pull 
+```
+then you go back your branch and make pull request
+```
+git checkout yourbranch
+git merge main
+```
