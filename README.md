@@ -174,4 +174,6 @@ then you go back your branch and make pull request
 ```
 git checkout yourbranch
 git merge main
+git push 
+make pull request and then compare and merge it 
 ```

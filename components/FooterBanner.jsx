@@ -14,26 +14,26 @@ const FooterBanner = ({
 }) => {
   return (
     <div>
-      <div className="bg-[#6427e8] h-[400px] m-5  flex justify-center px-10 py-5 rounded-[15px] relative w-[90%] mt-10 mx-auto">
+      <div className="bg-yellow h-[400px] m-5  flex justify-center px-10 py-5 rounded-[15px] relative w-[90%] mt-10 mx-auto">
         <div className="py-3">
-          <p className="text-white font-semibold text-3xl tracking-wider pt-10 mb-2">
+          <p className="pt-10 mb-2 text-3xl font-semibold tracking-wider text-white">
             {discount}
           </p>
-          <h3 className="text-white text-5xl ml-10 tracking-wider font-semibold mb-2">
+          <h3 className="mb-2 ml-10 text-5xl font-semibold tracking-wider text-white">
             {largeText2}
           </h3>
-          <p className="text-white text-lg">{saleTime}</p>
+          <p className="text-lg text-white">{saleTime}</p>
         </div>
         <div className="relative text-white font-semibold tracking-wider text-[16px] z-20">
           <p>{smallText}</p>
           <h3>{medText}</h3>
-          <p className="uppercase font-bold text-black">{description}</p>
+          <p className="font-bold text-black uppercase">{description}</p>
           <Link href="">
             <button type="button" className="cursor-pointer ">
-              <img src={urlFor(image).url()} alt="" className="absolute bottom-[10%] left-[15%] top-[25%] w-[250px] z-0 
+              <img src={urlFor(image).url()} alt="" className="absolute left-[500px] bottom-[50px] w-[200px] z-0 
               md:w-[100px]
               lg:w-[200px]
-              xl:w-[300px]"/>
+              xl:w-[250px]"/>
             </button>
           </Link>
         </div>
