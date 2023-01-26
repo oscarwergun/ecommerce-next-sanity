@@ -7,7 +7,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
       {/* {console.log(slug && slug.current)} */}
       <Link href={`/product/${slug?.current}`}>
         <div>
-          {/* {console.log(image[0].asset._ref)} */}
+          {console.log(image[0])}
           {image && (
             <img
               src={urlFor(image[0].asset._ref).url()}
@@ -17,10 +17,10 @@ const Product = ({ product: { image, name, slug, price } }) => {
               className="border-4 bg-[#ebebeb] hover:scale-75 duration-300 ease-in-out p-3 rounded-3xl"
             />
           )}
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
 
-          <p className="my-2 text-xl text-slate-600 tracking-wide font-semibold mx-2">{name}</p>
-          <span className="text-slate-400 mx-2 text-lg ">{price} SEK</span>
+          <p className="mx-2 my-2 text-xl font-semibold tracking-wide text-slate-600">{name}</p>
+          <span className="mx-2 text-lg text-slate-400 ">{price} SEK</span>
           </div>
         </div>
       </Link>
