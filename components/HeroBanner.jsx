@@ -3,7 +3,7 @@ import Link from "next/link";
 import { urlFor } from "../lib/client";
 const HeroBanner = ({ heroBanner }) => {
   return (
-    <div className="flex h-[500px] md:h-[600px] lg:h-[650px] min-w-full mx-auto px-10  relative xl:z-20">
+    <div className="flex h-[500px] md:h-[600px] lg:h-[650px] min-w-full mx-auto px-10  relative xl:z-20 my-5">
       <div className="bg-yellow rounded-lg w-[100%] mx-auto px-5">
         <p className="mx-1 my-3 text-2xl">{heroBanner.smallText}</p>
         <h3 className="ml-5 text-5xl font-semibold tracking-wide md:text-6xl lg:text-8xl ">

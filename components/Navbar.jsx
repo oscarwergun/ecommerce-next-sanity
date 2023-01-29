@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between mx-auto px-6 h-[100px] bg-[#04020a] relative">
       <p className="text-3xl my-2 tracking-wider font-semibold font-serif italic text-[#fafafa]">
-        <Link href="http://codeguruozzy.com" >CodeguruOzzy</Link>
+        <Link href="http://codeguruozzy.com" >CodeguruOzzy Store</Link>
       </p>
       <button type="button" className="relative flex items-center justify-between">
         <AiOutlineShopping size="30" color="white"/>

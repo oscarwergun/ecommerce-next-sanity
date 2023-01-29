@@ -7,7 +7,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
       {/* {console.log(slug && slug.current)} */}
       <Link href={`/product/${slug?.current}`}>
         <div>
-          {console.log(image[0])}
+          {/* {console.log(image[0])} */}
           {image && (
             <img
               src={urlFor(image[0].asset._ref).url()}

@@ -13,15 +13,15 @@ const Home = ({ products, bannerData }) => {
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       {/* {console.log(bannerData)} */}
       <div>
-        <h2 className="text-4xl text-center capitalize tracking-wider text-gray-600 font-semibold">
+        <h2 className="my-5 text-5xl font-semibold tracking-wider text-center capitalize text-slate-600">
           Top selling products
         </h2>
-        <p className="text-2xl font-semibold text-slate-400 text-center">
+        <p className="text-2xl font-semibold text-center text-slate-400">
           {" "}
           Recommended products
         </p>
       </div>
-      <div className="flex flex-wrap gap-5 justify-center my-5 w-full">
+      <div className="flex flex-wrap justify-center w-full gap-5 my-5">
         {products?.map((product) => (
           <Product key={product._id} product={product} />
         ))}

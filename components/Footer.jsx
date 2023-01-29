@@ -8,7 +8,9 @@ const Footer = () => {
         href="http://portfolio-2-0-904o647jn-oscaroguzhan.vercel.app
 "
       >
-        <div>CodeguruOzzy Copyright@2023</div>
+        <div className="text-[16px] tracking-wide text-center">
+          CodeguruOzzy Copyright@2023
+        </div>
       </Link>
     </div>
   );
