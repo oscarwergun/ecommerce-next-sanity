@@ -7,10 +7,14 @@ import {
 } from "react-icons/ai";
 import Product from "../../components/Product";
 import { urlFor, client } from "../../lib/client";
-
+import { useStateContext } from "../../context/StateContext";
 const ProductDetails = ({ product, products }) => {
   // destructure the parameter from the product
   const { image, name, price, details } = product;
+  //destructure the global states we create at stateContext.js
+  const { decreaseQuantity, increaseQuantity, quantity, onAdd } =
+    useStateContext();
+
   return (
     <div>
       <div className="flex gap-8 m-8 text-lightCyan">
@@ -40,22 +44,26 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div>
             <h3 className="text-xl font-bold">Quantity: </h3>
-            <p className="flex items-center justify-center gap-2 my-2 ">
-              <span id="minus" className="cursor-pointer ">
+            <p className="flex items-center gap-2 my-3 ">
+              <span
+                id="minus"
+                className="cursor-pointer"
+                onClick={decreaseQuantity}
+              >
                 <AiOutlineMinusSquare size="2.5rem" />
               </span>
               <span id="quantity" className="text-[24px] font-bold">
-                0
+                {quantity}
               </span>
-              <span>
+              <span onClick={increaseQuantity}>
                 <AiOutlinePlusSquare size="2.5rem" />
               </span>
             </p>
             <div id="buttons" className="flex flex-col gap-4 my-16 md:flex-row">
-              <button className="p-3 text-lg text-white ease-out bg-black rounded-md shadow-lg transition-scale md:px-4 lg:px-5 md:py-3 lg:py-4 hover:scale-105">
+              <button className="p-3 text-lg text-white ease-out bg-black rounded-md shadow-lg cursor-pointer transition-scale md:px-4 lg:px-5 md:py-3 lg:py-4 hover:scale-105" type="button" onClick={()=> onAdd(product, quantity)}>
                 Add to Cart
               </button>
-              <button className="p-3 text-lg text-white ease-in-out rounded-md shadow-lg transition-scale bg-red hover:scale-105">
+              <button className="p-3 text-lg text-white ease-in-out rounded-md shadow-lg cursor-pointer transition-scale bg-red hover:scale-105" type="button">
                 Shop Now
               </button>
             </div>
@@ -69,7 +77,7 @@ const ProductDetails = ({ product, products }) => {
         <div id="marquee" className="">
           <div className="flex flex-wrap justify-center gap-5 my-5">
             {products.map((item) => (
-              <Product key={item._id} product={item}/>
+              <Product key={item._id} product={item} />
             ))}
           </div>
         </div>

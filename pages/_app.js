@@ -1,12 +1,18 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
-Layout;
+
+import { StateContext } from "../context/StateContext";
+import { Toaster } from "react-hot-toast";
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-    {/* this is the component we are current in */}
-      <Component {...pageProps} />
-    </Layout>
+    //through wrap with StateContext we can pass data/state to every children component
+    <StateContext>
+      <Layout>
+        <Toaster />
+        {/* this is the component we are current in */}
+        <Component {...pageProps} />
+      </Layout>
+    </StateContext>
   );
 }
 
