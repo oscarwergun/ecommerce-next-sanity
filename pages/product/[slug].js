@@ -11,10 +11,19 @@ import { useStateContext } from "../../context/StateContext";
 const ProductDetails = ({ product, products }) => {
   // destructure the parameter from the product
   const { image, name, price, details } = product;
+  console.log(product);
   //destructure the global states we create at stateContext.js
-  const { decreaseQuantity, increaseQuantity, quantity, onAdd } =
-    useStateContext();
+  const {
+    decreaseQuantity,
+    increaseQuantity,
+    quantity,
+    handleAdd,
+    setShowCart,
+  } = useStateContext();
 
+  const handleShopNow = () => {
+    setShowCart(true);
+  };
   return (
     <div>
       <div className="flex gap-8 m-8 text-lightCyan">
@@ -60,10 +69,18 @@ const ProductDetails = ({ product, products }) => {
               </span>
             </p>
             <div id="buttons" className="flex flex-col gap-4 my-16 md:flex-row">
-              <button className="p-3 text-lg text-white ease-out bg-black rounded-md shadow-lg cursor-pointer transition-scale md:px-4 lg:px-5 md:py-3 lg:py-4 hover:scale-105" type="button" onClick={()=> onAdd(product, quantity)}>
+              <button
+                className="p-3 text-lg text-white ease-out bg-black rounded-md shadow-lg cursor-pointer transition-scale md:px-4 lg:px-5 md:py-3 lg:py-4 hover:scale-105"
+                type="button"
+                onClick={() => handleAdd(product, quantity)}
+              >
                 Add to Cart
               </button>
-              <button className="p-3 text-lg text-white ease-in-out rounded-md shadow-lg cursor-pointer transition-scale bg-red hover:scale-105" type="button">
+              <button
+                className="p-3 text-lg text-white ease-in-out rounded-md shadow-lg cursor-pointer transition-scale bg-red hover:scale-105"
+                type="button"
+                onClick={handleShopNow}
+              >
                 Shop Now
               </button>
             </div>
