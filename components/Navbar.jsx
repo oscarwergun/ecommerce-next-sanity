@@ -10,9 +10,9 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between mx-auto px-6 h-[100px] bg-[#04020a] relative">
       <p className="text-3xl my-2 tracking-wider font-semibold font-serif italic text-[#fafafa]">
-        <Link href="http://codeguruozzy.com">
+        <Link href="/">
           <div>
-            <span className="text-4xl text-red">M</span>averick       
+            <span className="text-4xl text-red">M</span>averick
             <span className="ml-2 text-4xl text-red">M</span>all
           </div>
         </Link>
